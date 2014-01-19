@@ -57,13 +57,14 @@ function removeContact(firstName,lastName) {
 	var contactOptions = { filter: firstName + " "  + lastName, multiple: true };
 	
 	navigator.contacts.find(contactFields, onFindRemoveSuccess, onFindRemoveError, contactOptions);
+	alert("Removing Name: " + contacts[i].name.firstName + " " + contacts[i].name.lastName);
 }
 
 function onFindRemoveSuccess(contacts) {
 	//alert("Contacts Length = " + contacts.length);
 	for (var i = 0; i < contacts.length; i++) {
 		//console.log("Display Name = " + contacts[i].displayName);
-		alert("Removing Name: " + contacts[i].name.firstName + " " + contacts[i].name.lastName);
+		//alert("Removing Name: " + contacts[i].name.firstName + " " + contacts[i].name.lastName);
 		contacts[i].remove(onRemoveContactSuccess,onRemoveContactError);
 	}
 }
