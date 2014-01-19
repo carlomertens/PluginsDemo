@@ -32,8 +32,12 @@ function findContact(firstName,lastName) {
 }
 
 function onFindContactSuccess(contacts) {
-	for (var i = 0; i < contacts.length; i++) {
-		alert("Found Contact: " + contacts[i].name.givenName + " " + contacts[i].name.familyName);
+	if(contacts.length>0){
+		for (var i = 0; i < contacts.length; i++) {
+			alert("Found Contact: " + contacts[i].name.givenName + " " + contacts[i].name.familyName);
+		}
+	} else {
+		alert("Contact NOT Found!");
 	}
 }
 
@@ -55,8 +59,12 @@ function removeContact(firstName,lastName) {
 }
 
 function onFindRemoveSuccess(contacts) {
-	for (var i = 0; i < contacts.length; i++) {
-		contacts[i].remove(onRemoveContactSuccess,onRemoveContactError);
+	if(contacts.length>0){
+		for (var i = 0; i < contacts.length; i++) {
+			contacts[i].remove(onRemoveContactSuccess,onRemoveContactError);
+		}
+	} else {
+		alert("Nothing to remove... Contact NOT Found!");
 	}
 }
 
