@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>iOS App</title>
+    <link href="topcoat/css/topcoat-mobile-light.css" rel="stylesheet" type="text/css">
+    <link href="css/keypoint.css" rel="stylesheet" type="text/css">
+    <link href="css/prettify.css" rel="stylesheet" type="text/css">
+    <link href="css/slides.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<img id="logo" src="images/LH-logo.jpg"/>
+
+<div id="wrapper"></div>
+
+<div id="slides">
+
+<div class="slide">
+	<h1>Cordova Plugins</h1>
+	<h2>Demo</h2>
+	<img src="images/logo.png" />
+</div>
+
+<div class="slide">
+	<h1>Accelerometer</h1>
+	<button class="topcoat-button" onclick="accelerometer();">Get Accelerometer Values</button>
+</div>
+
+<div class="slide">
+    <h1>Camera</h1>
+    <button class="topcoat-button" onclick="capturePhoto();">Capture Photo</button> <button class="topcoat-button" onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+    <button class="topcoat-button" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button>  <button class="topcoat-button" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
+    <img style="display:none;width:150px;" id="firstSmallImage" src="" />
+    <img style="display:none;width:150px;" id="secondSmallImage" src="" />
+</div>
+
+<div class="slide">
+	<h1>Capture</h1>
+	<button class="topcoat-button" onclick="captureAudio();">Capture Audio</button> <button class="topcoat-button" onclick="captureImage();">Capture Image</button> <br>
+	<button class="topcoat-button" onclick="captureVideo();">Capture Video</button>
+</div>
+
+<div class="slide">
+	<h1>Compass</h1>
+	<button class="topcoat-button" onclick="currentHeading();">Get Current Heading</button><br><br>
+    <div id="heading"></div><br>
+    <button class="topcoat-button" onclick="startWatch();">Start Watching</button>
+    <button class="topcoat-button" onclick="stopWatch();">Stop Watching</button>
+</div>
+
+<div class="slide">
+	<h1>Connection</h1>
+	<button class="topcoat-button" onclick="checkConnection();">Check Connection</button> 
+</div>
+
+<div class="slide">
+	<h1>Contacts</h1>
+	<button class="topcoat-button" onclick="createContact('Jo','Doe');">Create Contact "Jo Doe"</button> <br><br>
+	<!-- <input class="topcoat-text-input--large" type=text id="contactname" name="contactname"><br> -->
+	<button class="topcoat-button" onclick="findContact('Jo','Doe');">Find Contact "Jo Doe"</button> <br><br>
+	<button class="topcoat-button" onclick="removeContact('Jo','Doe');">Remove Contact "Jo Doe"</button> <br><br>
+	<button class="topcoat-button" onclick="createSaveCloneRemoveContact();">Create-Save-Clone-Remove Contact</button> 
+</div>
+
+<div class="slide">
+	<h1>Device</h1>
+	<button class="topcoat-button" onclick="showDevice();">Show Device Properties</button> <br>
+	<p id="deviceProperties"></p>
+</div>
+
+<div class="slide">
+	<h1>Events</h1>
+	<p>TBD</p>
+</div>
+
+<div class="slide">
+	<h1>File</h1>
+	<button class="topcoat-button" onclick="writeFile();">Write File</button> <button class="topcoat-button" onclick="readFile();">Read File</button> <br><br>
+	<button class="topcoat-button" onclick="uploadFile();">Upload File</button> <button class="topcoat-button" onclick="downloadFile();">Download File</button> <br><br>
+	<p></p>
+</div>
+
+<div class="slide">
+	<h1>Geolocation</h1>
+	<button class="topcoat-button" onclick="currentPosition();">Current Geolocation Position</button><br>
+	<button class="topcoat-button" onclick="watchPosition();">Watch Geolocation Position</button> <button class="topcoat-button" onclick="clearWatchPosition();">Clear Watch Position</button><br>
+	<p id="geolocation"></p>
+	<p></p>
+</div>
+
+<div class="slide">
+	<h1>Globalization</h1>
+	<button class="topcoat-button" onclick="checkLanguage();">Check Language</button><br>
+	<button class="topcoat-button" onclick="checkLocale();">Check Locale</button>
+	<p></p>
+</div>
+
+</div> <!-- end of '#slides' -->
+
+<a id="menu-btn" class="topcoat-icon-button--quiet">
+    <span class="topcoat-icon topcoat-icon--menu-stack"></span>
+</a>
+
+<div id="menu">
+    <div class="header">
+        <div class="title" align="center">Demos</div>
+    </div>
+    <div class="topcoat-list__container scroller cf">
+        <ol id="list" class="topcoat-list"></ol>
+    </div>
+</div>
+
+<script src="cordova.js"></script>
+<script src="lib/fastclick.js"></script>
+<script src="lib/prettify.js"></script>
+<script src="lib/swipeview.js"></script>
+<script src="lib/jquery.js"></script>
+<script src="js/keypoint.js"></script>
+<script src="js/slides.js"></script>
+<script src="js/accelerometer.js"></script>
+<script src="js/camera.js"></script>
+<script src="js/capture.js"></script>
+<script src="js/compass.js"></script>
+<script src="js/connection.js"></script>
+<script src="js/contacts.js"></script>
+<script src="js/device.js"></script>
+<script src="js/file.js"></script>
+<script src="js/geolocation.js"></script>
+<script src="js/globalization.js"></script>
+</body>
+</html>
