@@ -53,25 +53,32 @@ function onFindContactError(contactError) {
 
 function removeContact(firstName,lastName) {
 
-	var contact = navigator.contacts.create();
-	var name = new ContactName();
-	name.givenName = firstName;//"Jane";
-	name.familyName = lastName;//"Doe";
-	contact.name = name;
+	var contactFields = ["displayName", "name"];
+	var contactOptions = { filter: firstName + " "  + lastName, multiple: true };
 	
-	alert("Deleting contact:" + firstName + " " + lastName + " ...");
-
-	contact.remove(onFindRMContactSuccess,onFindRMContactError);
+	navigator.contacts.find(contactFields, onFindRemoveSuccess, onFindRemoveError, contactOptions);
 }
 
-function onFindRMContactSuccess(contacts) {
+function onFindRemoveSuccess(contacts) {
 	//alert("Contacts Length = " + contacts.length);
 	for (var i = 0; i < contacts.length; i++) {
 		//console.log("Display Name = " + contacts[i].displayName);
-		alert("Name = " + contacts[i].name.firstName + " " + contacts[i].name.lastName);
+		alert("Removing Name: " + contacts[i].name.firstName + " " + contacts[i].name.lastName);
+		contacts[i].remove(onRemoveContactSuccess,onRemoveContactError);
 	}
 }
 
+function onFindRemoveError(contacts) {
+	alert('onFindRemoveError!');
+}
+
+function onRemoveContactSuccess(contacts) {
+	alert('Contact Deleted!');
+}
+
+function onRemoveContactError(contacts) {
+	alert('onRemoveContactError!');
+}
 /////////////////////////////////////////////////////////////////////////////
 
 function createSaveCloneRemoveContact() {
