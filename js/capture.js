@@ -79,6 +79,8 @@ function uploadFile(mediaFile) {
 		path = mediaFile.fullPath,
 		name = mediaFile.name;
 
+	alert("media file "+ path + name + " saved");
+	/*
 	ft.upload(path,
 		"http://my.domain.com/upload.php",
 		function(result) {
@@ -89,5 +91,6 @@ function uploadFile(mediaFile) {
 			console.log('Error uploading file ' + path + ': ' + error.code);
 		},
 		{ fileName: name });
+	*/
 }
 
